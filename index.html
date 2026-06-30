@@ -44,26 +44,23 @@ section{position:relative;}
 .btn-gold{background:var(--gold);color:#1a1306;border:none;}
 .btn-gold:hover{background:#c8aa6c;transform:translateY(-2px);color:#1a1306;}
 
-/* ── top bar (overlay on hero, logo plate hangs onto photo) ── */
-.topbar{position:absolute;top:0;left:0;right:0;z-index:30;}
-.topbar:before{content:"";position:absolute;top:0;left:0;right:0;height:92px;
-  background:linear-gradient(180deg,rgba(7,14,32,.66),rgba(7,14,32,.22) 64%,transparent);}
-.topbar-in{position:relative;height:92px;display:flex;align-items:center;
-  padding-left:clamp(150px,17vw,236px);}
-.logoplate{position:absolute;left:0;top:0;background:#fff;height:122px;display:flex;align-items:center;
-  padding:0 clamp(20px,2.4vw,30px);box-shadow:0 20px 44px -16px rgba(0,0,0,.5);border-radius:0 0 3px 3px;}
-.logoplate img{height:clamp(52px,5.4vw,66px);width:auto;}
-.navlinks{display:flex;align-items:center;gap:clamp(14px,2vw,30px);}
-.navlinks a{color:#fff;font-weight:600;font-size:15px;letter-spacing:.01em;transition:color .2s;}
-.navlinks a:hover{color:#cdd9f5;}
-.nav-sp{flex:1;}
-.cta-nav{background:var(--brand);color:#fff!important;padding:12px 24px;border:1.5px solid rgba(255,255,255,.25);}
+/* ── white top nav (logo plate hangs onto hero, menu centered) ── */
+.nav{background:#fff;position:relative;z-index:40;border-bottom:1px solid #eceef3;}
+.nav-in{height:84px;position:relative;display:flex;align-items:center;justify-content:center;}
+.logoplate{position:absolute;left:clamp(20px,5vw,48px);top:0;height:120px;display:flex;align-items:center;
+  background:#fff;padding-right:14px;z-index:3;filter:drop-shadow(0 16px 22px rgba(20,30,60,.16));}
+.logoplate img{height:clamp(54px,5.4vw,70px);width:auto;}
+.navlinks{display:flex;align-items:center;gap:clamp(16px,2.4vw,36px);}
+.navlinks a{color:#2a3650;font-weight:600;font-size:15px;letter-spacing:.01em;transition:color .2s;}
+.navlinks a:hover{color:var(--royal);}
+.cta-nav{position:absolute;right:0;top:50%;transform:translateY(-50%);
+  background:var(--brand);color:#fff!important;padding:12px 24px;}
 .cta-nav:hover{background:#22376f;}
 .navtoggle{display:none;}
 
 /* ── hero ── */
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;
-  overflow:hidden;background:var(--navy);padding:128px 0 7vh;}
+.hero{position:relative;min-height:calc(100svh - 84px);display:flex;align-items:center;
+  overflow:hidden;background:var(--navy);padding:11vh 0 8vh;}
 .hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;}
 .hero .veil{position:absolute;inset:0;
   background:linear-gradient(99deg,rgba(7,14,32,.92) 0%,rgba(9,19,44,.74) 36%,rgba(10,22,50,.34) 64%,rgba(10,22,50,.10) 100%);}
@@ -112,18 +109,15 @@ section{position:relative;}
 .svc h3{font-size:21px;margin-bottom:11px;font-family:var(--serif);}
 .svc p{font-size:15px;color:var(--muted);line-height:1.6;}
 
-/* ── advantage band (navy + premium office image) ── */
-.band{background:linear-gradient(155deg,#16294f 0%,#0e1c3e 70%);color:#fff;overflow:hidden;}
-.band:before{content:"";position:absolute;top:-30%;right:-8%;width:480px;height:480px;border-radius:50%;
-  background:radial-gradient(circle,rgba(64,100,215,.26),transparent 68%);}
-.band .wrap{position:relative;}
-.band-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(34px,5vw,64px);align-items:center;}
-.band h2{color:#fff;font-size:clamp(28px,4vw,44px);max-width:560px;margin-bottom:20px;}
-.band .lead{color:#c8d2e8;max-width:560px;}
-.band-img{position:relative;border-radius:6px;overflow:hidden;min-height:360px;
-  box-shadow:0 40px 70px -34px rgba(0,0,0,.65);border:1px solid rgba(255,255,255,.1);}
-.band-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.band-img:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(14,28,62,.42),transparent 60%);}
+/* ── dark photo-background block (office / Ticino), navy-darkened ── */
+.bgblock{position:relative;color:#fff;overflow:hidden;background:var(--navy);}
+.bgblock .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.bgblock .veil{position:absolute;inset:0;}
+.bgblock .wrap{position:relative;z-index:2;}
+.bgblock h2{color:#fff;font-size:clamp(28px,4vw,46px);max-width:680px;margin-bottom:20px;}
+.bgblock .lead{color:#d4ddf0;max-width:620px;}
+.band-veil{background:linear-gradient(118deg,rgba(8,16,40,.95) 0%,rgba(11,22,52,.88) 46%,rgba(13,28,64,.74) 100%);}
+.ticino-veil{background:linear-gradient(110deg,rgba(7,15,36,.93) 0%,rgba(10,20,48,.78) 52%,rgba(12,24,58,.64) 100%);}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:58px;}
 .stat{padding:28px 24px;border-radius:4px;background:rgba(255,255,255,.05);
   border:1px solid rgba(255,255,255,.12);}
@@ -175,10 +169,10 @@ section{position:relative;}
   box-shadow:0 44px 80px -38px rgba(20,40,90,.5);}
 .partner-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .partner-text h2{font-size:clamp(27px,3.8vw,44px);margin-bottom:20px;}
-.pmarks{display:flex;gap:34px;margin-top:30px;flex-wrap:wrap;}
-.pmarks div{font-family:var(--serif);font-weight:700;font-size:27px;color:var(--brand);}
-.pmarks span{display:block;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--muted);
-  letter-spacing:.04em;margin-top:3px;}
+.pmarks{display:flex;gap:40px;margin-top:34px;flex-wrap:wrap;}
+.pmarks div{font-family:var(--serif);font-weight:700;font-size:28px;color:#fff;}
+.pmarks span{display:block;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--gold);
+  letter-spacing:.05em;margin-top:4px;}
 
 /* ── region ── */
 .region-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;margin-top:14px;}
@@ -230,9 +224,10 @@ footer{background:#0b1530;color:#9fb0d0;padding:64px 0 36px;}
 .foot-bot{display:flex;justify-content:space-between;gap:18px 30px;flex-wrap:wrap;align-items:center;
   padding-top:26px;}
 .foot-bot .copy{font-size:13px;color:#7184a8;}
-.foot-credit{display:flex;align-items:baseline;gap:14px;}
+.foot-credit{display:flex;align-items:center;gap:16px;}
 .foot-credit .lbl{font-size:14px;color:#aebbd6;}
-.foot-credit .arvut-wm{font-family:var(--serif);font-weight:700;font-size:26px;color:var(--arvut);letter-spacing:.02em;}
+.foot-credit .arvut-wm{font-family:var(--sans);font-weight:800;font-size:27px;color:var(--arvut);
+  letter-spacing:.10em;text-transform:uppercase;}
 
 /* ── reveal ── */
 .reveal{opacity:0;transform:translateY(26px);
@@ -244,43 +239,43 @@ footer{background:#0b1530;color:#9fb0d0;padding:64px 0 36px;}
 /* ── responsive ── */
 @media(max-width:980px){
   .svc-grid,.price-grid,.steps,.stats{grid-template-columns:1fr 1fr;}
-  .band-grid,.partner-grid,.region-grid,.contact-grid{grid-template-columns:1fr;gap:36px;}
-  .band-img{min-height:300px;}.partner-img{min-height:340px;}
+  .region-grid,.contact-grid{grid-template-columns:1fr;gap:36px;}
   .stats{gap:16px;}
 }
 @media(max-width:760px){
   .navlinks{display:none;}
-  .topbar-in{padding-left:0;justify-content:flex-end;}
-  .logoplate{height:96px;padding:0 18px;}
+  .nav-in{justify-content:flex-start;height:78px;}
+  .logoplate{height:104px;}
+  .logoplate img{height:50px;}
   .cta-nav{padding:10px 18px;}
   .shift-grid,.svc-grid,.price-grid,.steps,.stats{grid-template-columns:1fr;}
-  .hero{padding:120px 0 9vh;min-height:auto;}
+  .hero{padding:8vh 0 9vh;min-height:auto;}
+  .pmarks{gap:26px;}
   .tier.feat{order:-1;}
 }
 </style>
 </head>
 <body>
 
-<!-- HERO + overlay nav -->
-<header class="hero" id="top">
+<!-- WHITE NAV -->
+<header class="nav" id="top">
+  <div class="wrap nav-in">
+    <a href="#top" class="logoplate"><img src="assets/pm-group-logo.svg" alt="PM Group"></a>
+    <nav class="navlinks">
+      <a href="#servizi">Услуги</a>
+      <a href="#perche">Почему PM Group</a>
+      <a href="#tariffe">Тарифы</a>
+      <a href="#come">Как работаем</a>
+      <a href="#regione">Регион</a>
+    </nav>
+    <a href="#contatto" class="btn cta-nav">Получить расчёт</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
   <img class="bg" src="assets/villa-pm.jpg?v=2" alt="Резиденция PM Group в Лугано">
   <div class="veil"></div>
-
-  <div class="topbar">
-    <div class="wrap topbar-in">
-      <a href="#top" class="logoplate"><img src="assets/pm-group-logo.svg" alt="PM Group"></a>
-      <div class="navlinks">
-        <a href="#servizi">Услуги</a>
-        <a href="#perche">Почему PM Group</a>
-        <a href="#tariffe">Тарифы</a>
-        <a href="#come">Как работаем</a>
-        <a href="#regione">Регион</a>
-      </div>
-      <div class="nav-sp"></div>
-      <a href="#contatto" class="btn cta-nav">Получить расчёт</a>
-    </div>
-  </div>
-
   <div class="wrap">
     <div class="hero-in">
       <p class="eyebrow light">Для средних и крупных компаний · Тичино и Граубюнден</p>
@@ -298,7 +293,7 @@ footer{background:#0b1530;color:#9fb0d0;padding:64px 0 36px;}
       </div>
     </div>
   </div>
-</header>
+</section>
 
 <!-- SHIFT -->
 <section class="sec" id="cambiamento">
@@ -374,16 +369,15 @@ footer{background:#0b1530;color:#9fb0d0;padding:64px 0 36px;}
   </div>
 </section>
 
-<!-- ADVANTAGE BAND -->
-<section class="sec band" id="perche">
+<!-- ADVANTAGE BAND (office bg, navy-darkened) -->
+<section class="sec bgblock" id="perche">
+  <img class="bgimg" src="assets/office-premium.jpg?v=3" alt="Премиальный офис">
+  <div class="veil band-veil"></div>
   <div class="wrap">
-    <div class="band-grid">
-      <div class="reveal">
-        <p class="eyebrow light">Почему PM Group</p>
-        <h2>Масштаб крупной компании — без собственного бухгалтерского отдела</h2>
-        <p class="lead">Своя бухгалтерия в Тичино или Граубюндене обходится в CHF 95–105 тыс. за одного специалиста и 200–440 тыс. за команду 2–4 человека. С PM Group вы получаете ту же работу — и финансовую функцию уровня крупной компании — заметно дешевле и в реальном времени.</p>
-      </div>
-      <div class="band-img reveal"><img src="assets/office-meeting.jpg?v=2" alt="Премиальный офис"></div>
+    <div class="reveal" style="max-width:680px;">
+      <p class="eyebrow light">Почему PM Group</p>
+      <h2>Масштаб крупной компании — без собственного бухгалтерского отдела</h2>
+      <p class="lead">Своя бухгалтерия в Тичино или Граубюндене обходится в CHF 95–105 тыс. за одного специалиста и 200–440 тыс. за команду 2–4 человека. С PM Group вы получаете ту же работу — и финансовую функцию уровня крупной компании — заметно дешевле и в реальном времени.</p>
     </div>
     <div class="stats">
       <div class="stat reveal"><div class="n">≈70<small>%</small></div><div class="t">экономия против собственного бухгалтера в год</div></div>
@@ -474,21 +468,20 @@ footer{background:#0b1530;color:#9fb0d0;padding:64px 0 36px;}
   </div>
 </section>
 
-<!-- PARTNER BLOCK -->
-<section class="sec">
+<!-- PARTNER / TICINO BLOCK (landscape bg, navy-darkened) -->
+<section class="sec bgblock">
+  <img class="bgimg" src="assets/ticino.jpg?v=3" alt="Южная Швейцария — Тичино">
+  <div class="veil ticino-veil"></div>
   <div class="wrap">
-    <div class="partner-grid">
-      <div class="partner-img reveal"><img src="assets/office-partner.jpg?v=2" alt="Команда PM Group"></div>
-      <div class="partner-text reveal">
-        <p class="eyebrow">Южная Швейцария — наш дом</p>
-        <h2>Партнёр, который рядом и говорит на вашем языке</h2>
-        <p class="lead">PM Group работает в Лугано, Кьяссо и Гроно. Мы знаем экономику Тичино и Граубюндена изнутри — от трансграничных групп у границы с Италией до операционного бизнеса туризма, энергетики и строительства.</p>
-        <div class="pmarks">
-          <div>IT / DE<span>Italiano e Deutsch</span></div>
-          <div>3<span>офиса в регионе</span></div>
-          <div>EUR / CHF<span>трансграничный учёт</span></div>
-        </div>
-      </div>
+    <div class="reveal" style="max-width:680px;">
+      <p class="eyebrow light">Южная Швейцария — наш дом</p>
+      <h2>Партнёр, который рядом и говорит на вашем языке</h2>
+      <p class="lead">PM Group работает в Лугано, Кьяссо и Гроно. Мы знаем экономику Тичино и Граубюндена изнутри — от трансграничных групп у границы с Италией до операционного бизнеса туризма, энергетики и строительства.</p>
+    </div>
+    <div class="pmarks reveal">
+      <div>IT / DE<span>Italiano e Deutsch</span></div>
+      <div>3<span>офиса в регионе</span></div>
+      <div>EUR / CHF<span>трансграничный учёт</span></div>
     </div>
   </div>
 </section>
@@ -580,7 +573,7 @@ footer{background:#0b1530;color:#9fb0d0;padding:64px 0 36px;}
     </div>
     <div class="foot-bot">
       <span class="copy">© 2026 PM Group · Lugano · Chiasso · Grono</span>
-      <span class="foot-credit"><span class="lbl">Технология реального времени</span><span class="arvut-wm">Arvut</span></span>
+      <span class="foot-credit"><span class="lbl">Технология реального времени</span><span class="arvut-wm">ARVUT</span></span>
     </div>
   </div>
 </footer>
